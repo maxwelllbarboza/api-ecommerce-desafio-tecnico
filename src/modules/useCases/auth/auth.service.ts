@@ -1,9 +1,9 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
 import { DatabaseService } from '../../configs/database/database.service';
 import { LoginDto } from './dto/login.dto';
-import { JwtTokenService } from '../../../common/services/jwt/jwt.token.service';
-import { BcryptService } from '../../../common/services/bcrypt/bcrypt.service';
-import { UnauthorizedError } from '../../../common/interceptors/errors/types/UnauthorizedError';
+import { JwtTokenService } from '../../configs/security/jwt/jwt.token.service';
+import { BcryptService } from '../../configs/security/bcrypt/bcrypt.service';
+import { UnauthorizedError } from '../../configs/interceptors/types/UnauthorizedError';
 
 @Injectable()
 export class AuthService {

@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
-import { BcryptService } from '../../../common/services/bcrypt/bcrypt.service';
-import { JwtTokenModule } from '../../../common/services/jwt/jwt.token.module';
-import { BcryptModule } from '../../../common/services/bcrypt/bcrypt.module';
-import { LoggerService } from '../../../infra/logger/logger.service';
+import { BcryptService } from '../../configs/security/bcrypt/bcrypt.service';
+import { JwtTokenModule } from '../../configs/security/jwt/jwt.token.module';
+import { BcryptModule } from '../../configs/security/bcrypt/bcrypt.module';
+import { LoggerService } from '../../configs/utils/logger/logger.service';
 import { DatabaseModule } from '../../configs/database/database.module';
 
 @Module({
