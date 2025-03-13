@@ -113,24 +113,16 @@ A aplicação utiliza alguns patterns para realizar tratamentos padronizados e f
 
 # **Design Patterns**
 
-## DTO 
-- O Data Transient Object é um pattern utilizado para transportar os dados dados entre as camadas da aplicação e, nesta aplicação, é usado também para comportar as annotations de validação de dados na entrada (input);
 
+- **DTO:** O Data Transient Object é um pattern utilizado para transportar os dados dados entre as camadas da aplicação e, nesta aplicação, é usado também para comportar as annotations de validação de dados na entrada (input);
+  
+- **Presenter:** Pattern utilizado para transporte de dados na camada mais externa da aplicação que levará os dados até o requisitante. Ou seja, é o pattern para transporte de dados na resposta (output).
+ 
+- **Service** Representa um serviço interno desta aplicação e serve para fazer o isolamento entre camadas.
+ 
+- **Controller** Pattern utilizado nesta aplicação para receber as requisições (input) e interagir com as camadas internas da aplicação a fim de gerar o resultado e enviar uma resposta ao requisitante.
 
-## Presenter 
-- Pattern utilizado para transporte de dados na camada mais externa da aplicação que levará os dados até o requisitante. Ou seja, é o pattern para transporte de dados na resposta (output).
-
-
-## Service
-- Representa um serviço interno desta aplicação e serve para fazer o isolamento entre camadas.
-
-
-## Controller
-- Pattern utilizado nesta aplicação para receber as requisições (input) e interagir com as camadas internas da aplicação a fim de gerar o resultado e enviar uma resposta ao requisitante.
-
-
-## Repository
-- Patters utilizado para fazer o trabalho de persistência de dados, interagindo com a camada de banco de dados.
+- **Repository** Patters utilizado para fazer o trabalho de persistência de dados, interagindo com a camada de banco de dados.
 
 
 ---
@@ -147,7 +139,7 @@ Antes de iniciar, certifique-se de ter instalado:
 - [Docker](https://www.docker.com/) (Opcional)
 
 
-## **Ambientes de Desenvolvimento (windows)**
+## **Ambientes de Desenvolvimento**
 
 ### 📥 **Clonando o repositório**
 ```sh
@@ -164,7 +156,7 @@ cd api_ecommerce-desafio
 docker-compose up -d
 ```
 
-## Executa o script para instalar o projeto
+### Executa o script para instalar o projeto
 ```bash
 Set-ExecutionPolicy Unrestricted -Scope Process
 .\setup.ps1
@@ -174,14 +166,9 @@ Set-ExecutionPolicy Unrestricted -Scope Process
 
 # **Documentação da API**
 
-A API foi construída para fornecer funcionalidades eficientes e seguras. Para facilitar a exploração e interação com os endpoints, utilizamos o Swagger como ferramenta de documentação interativa.
+A documentação da API foi construída por meio do framework Swagger, muito utilizado pelo mercado para esta finalidade. Ele permite não só conhecer as especificações técnicas e funcionais da API, mas também executar testes online de forma interativa. Acesse a documentação completa por este link.
 
-Você pode acessar a documentação completa e testar os endpoints diretamente clicando no link abaixo:
-
-[Explore os endpoints da API através do Swagger](https://api-ecommerce-desafio-tecnico-production.up.railway.app/docs)
-
-Clique com o botão direito e selecione "Abrir em nova aba" para abrir o link em uma nova aba.
-
+[Swagger](https://api-ecommerce-desafio-tecnico-production.up.railway.app/docs)
 
 
 ---
