@@ -3,8 +3,8 @@ import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { invalidUpdate } from '../../configs/message';
 import { ProductsRepository } from './products.repository';
-import { LoggerService } from '../../configs/utils/logger/logger.service';
-import { startLog } from '../../configs/utils/logger/log-template';
+import { LoggerService } from '../../configs/logger/logger.service';
+import { startLog } from '../../configs/logger/log-template';
 
 @Injectable()
 export class ProductsService {

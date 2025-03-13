@@ -1,7 +1,7 @@
 import { ConflictException, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UserRepository } from './users.repository';
-import { LoggerService } from '../../configs/utils/logger/logger.service';
+import { LoggerService } from '../../configs/logger/logger.service';
 import { emailAlreadyExists } from '../../configs/message';
 import { Role } from '@prisma/client';
 import { UserEntity } from './entities/user.entity';

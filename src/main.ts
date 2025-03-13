@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
 import { AllExceptionFilter } from './modules/configs/filters/exception.filter';
-import { LoggerService } from './modules/configs/utils/logger/logger.service';
+import { LoggerService } from './modules/configs/logger/logger.service';
 import { ResponseInterceptor } from './modules/configs/interceptors/response.interceptor';
 import { UnauthorizedInterceptor } from './modules/configs/interceptors/unauthorized.interceptor';
 import { NotFoundInterceptor } from './modules/configs/interceptors/notfound.interceptor';

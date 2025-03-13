@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UsersController } from './users.controller';
-import { LoggerService } from '../../configs/utils/logger/logger.service';
+import { LoggerService } from '../../configs/logger/logger.service';
 import { UsersModule } from './users.module';
 
 describe('UsersController', () => {

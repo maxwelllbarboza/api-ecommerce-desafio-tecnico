@@ -5,8 +5,8 @@ import { DatabaseService } from '../../configs/database/database.service';
 import { NotFoundError } from '../../configs/interceptors/types/NotFoundError';
 import { invalidPagination, productNotFound } from '../../configs/message';
 import { ProductsEntity } from './entities/products.entity';
-import { LoggerService } from '../../configs/utils/logger/logger.service';
-import { errorLog } from '../../configs/utils/logger/log-template';
+import { LoggerService } from '../../configs/logger/logger.service';
+import { errorLog } from '../../configs/logger/log-template';
 
 @Injectable()
 export class ProductsRepository {

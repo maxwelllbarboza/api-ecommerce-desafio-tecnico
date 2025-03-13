@@ -1,5 +1,5 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
-import { authorizationToLoginPayload } from '../utils/base64-converter';
+import { authorizationToLoginPayload } from './base64-converter';
 
 export const UserId = createParamDecorator(
   (data: unknown, ctx: ExecutionContext) => {

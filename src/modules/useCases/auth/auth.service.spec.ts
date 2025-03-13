@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AuthService } from './auth.service';
 import { JwtTokenService } from '../../configs/security/jwt/jwt.token.service';
 import { JwtService } from '@nestjs/jwt';
-import { LoggerService } from '../../configs/utils/logger/logger.service';
+import { LoggerService } from '../../configs/logger/logger.service';
 
 describe('AuthService', () => {
   let authService: AuthService;

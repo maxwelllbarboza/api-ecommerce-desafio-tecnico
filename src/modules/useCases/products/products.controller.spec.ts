@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ProductsController } from './products.controller';
 import { JwtTokenService } from '../../configs/security/jwt/jwt.token.service';
-import { LoggerService } from '../../configs/utils/logger/logger.service';
+import { LoggerService } from '../../configs/logger/logger.service';
 
 describe('ProductsController', () => {
   let controller: ProductsController;
