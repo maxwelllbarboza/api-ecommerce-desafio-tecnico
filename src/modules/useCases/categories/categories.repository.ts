@@ -3,8 +3,8 @@ import { DatabaseService } from '../../configs/database/database.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
 import { CategoriesEntity } from './entities/categories.entity';
-import { NotFoundError } from '../../../common/interceptors/errors/types/NotFoundError';
-import { cateroryNotFound } from '../../../common/resources/message';
+import { NotFoundError } from '../../configs/interceptors/types/NotFoundError';
+import { cateroryNotFound } from '../../configs/message';
 
 @Injectable()
 export class CategoriesRepository {

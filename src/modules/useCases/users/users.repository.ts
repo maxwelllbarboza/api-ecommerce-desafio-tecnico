@@ -4,7 +4,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import * as bcrypt from 'bcrypt';
 import { $Enums } from '@prisma/client';
 import { UserEntity } from './entities/user.entity';
-import { LoggerService } from '../../../infra/logger/logger.service';
+import { LoggerService } from '../../configs/utils/logger/logger.service';
 
 @Injectable()
 export class UserRepository {

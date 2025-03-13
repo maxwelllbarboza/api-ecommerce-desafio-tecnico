@@ -1,9 +1,9 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
 import { OrdersRepository } from './orders.repository';
 import { InsertOrderDto } from './dto/insert-order.dto';
-import { LoggerService } from '../../../infra/logger/logger.service';
+import { LoggerService } from '../../configs/utils/logger/logger.service';
 import { OrderEntity } from './entities/orders.entity';
-import { startLog } from '../../../common/resources/log-template';
+import { startLog } from '../../configs/utils/logger/log-template';
 import { UpdateOrderDto } from './dto/update-order.dto';
 
 @Injectable()

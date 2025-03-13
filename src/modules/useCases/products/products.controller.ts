@@ -20,8 +20,8 @@ import { AuthGuard } from '../auth/auth.guard';
 import { Roles } from '../auth/roles/roles.decorator';
 import { Role } from '@prisma/client';
 import { RolesGuard } from '../auth/roles/roles.guard';
-import { LoggerService } from '../../../infra/logger/logger.service';
-import { startLog } from '../../../common/resources/log-template';
+import { LoggerService } from '../../configs/utils/logger/logger.service';
+import { startLog } from '../../configs/utils/logger/log-template';
 
 @Roles(Role.ADMIN)
 @Controller('products')

@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { productNotFound } from '../../../common/resources/message';
+import { productNotFound } from '../../configs/message';
 import { DatabaseService } from '../../configs/database/database.service';
 import { InsertOrderDto } from '../orders/dto/insert-order.dto';
 import { OrderItemEntity } from './entities/orders-item.entity';

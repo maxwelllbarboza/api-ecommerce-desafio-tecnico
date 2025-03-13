@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InsertOrderDto } from './dto/insert-order.dto';
 import { DatabaseService } from '../../configs/database/database.service';
-import { orderActiveNotFound } from '../../../common/resources/message';
+import { orderActiveNotFound } from '../../configs/message';
 import { OrdersItemService } from '../orders-item/orders-item.service';
 import { OrderEntity } from './entities/orders.entity';
 import { UpdateOrderDto } from './dto/update-order.dto';

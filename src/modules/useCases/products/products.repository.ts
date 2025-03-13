@@ -2,14 +2,11 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { DatabaseService } from '../../configs/database/database.service';
-import { NotFoundError } from '../../../common/interceptors/errors/types/NotFoundError';
-import {
-  invalidPagination,
-  productNotFound,
-} from '../../../common/resources/message';
+import { NotFoundError } from '../../configs/interceptors/types/NotFoundError';
+import { invalidPagination, productNotFound } from '../../configs/message';
 import { ProductsEntity } from './entities/products.entity';
-import { LoggerService } from '../../../infra/logger/logger.service';
-import { errorLog } from '../../../common/resources/log-template';
+import { LoggerService } from '../../configs/utils/logger/logger.service';
+import { errorLog } from '../../configs/utils/logger/log-template';
 
 @Injectable()
 export class ProductsRepository {

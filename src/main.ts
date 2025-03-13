@@ -2,13 +2,13 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
-import { AllExceptionFilter } from './common/filters/exception.filter';
-import { LoggerService } from './infra/logger/logger.service';
-import { ResponseInterceptor } from './common/interceptors/response.interceptor';
-import { UnauthorizedInterceptor } from './common/interceptors/errors/inteceptors/unauthorized.interceptor';
-import { NotFoundInterceptor } from './common/interceptors/errors/inteceptors/notfound.interceptor';
-import { DatabaseInterceptor } from './common/interceptors/errors/inteceptors/database.interceptor';
-import { ConflictInterceptor } from './common/interceptors/errors/inteceptors/conflict.interceptor';
+import { AllExceptionFilter } from './modules/configs/filters/exception.filter';
+import { LoggerService } from './modules/configs/utils/logger/logger.service';
+import { ResponseInterceptor } from './modules/configs/interceptors/response.interceptor';
+import { UnauthorizedInterceptor } from './modules/configs/interceptors/unauthorized.interceptor';
+import { NotFoundInterceptor } from './modules/configs/interceptors/notfound.interceptor';
+import { DatabaseInterceptor } from './modules/configs/interceptors/database.interceptor';
+import { ConflictInterceptor } from './modules/configs/interceptors/conflict.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
