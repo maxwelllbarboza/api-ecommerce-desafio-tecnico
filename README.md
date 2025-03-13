@@ -184,24 +184,7 @@ Na nossa aplicação, utilizamos o Jest para escrever e executar testes unitári
 
 Para uma experiência interativa e fácil de testar os endpoints, você pode importar a Postman Collection. A collection contém todos os endpoints documentados, com exemplos de requisição e resposta. Basta importar a collection para sua instância do Postman e utilizar os exemplos de JSON para testar as requisições diretamente na ferramenta.
 
-Clique com o botão direito e selecione "Abrir em nova aba" para abrir o link em uma nova aba.
-
-[Importe as variáveis de production do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/production.postman_environment.json)
-
-
-[Importe as variáveis de developer do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/developer.postman_environment.json)
-
-
-[Importe a rota Category do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/Category.postman_collection.json)
-
-
-[Importe a rota Carrinho do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/Carrinho.postman_collection.json)
-
-
-[Importe a rota Products do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/Products.postman_collection.json)
-
-
-[Importe a rota Autenticação do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/Autentica%C3%A7%C3%A3o.postman_collection.json)
+[Collection Postman](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional)
 
 
 ---
