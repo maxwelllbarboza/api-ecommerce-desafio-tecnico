@@ -118,11 +118,11 @@ A aplicação utiliza alguns patterns para realizar tratamentos padronizados e f
   
 - **Presenter:** Pattern utilizado para transporte de dados na camada mais externa da aplicação que levará os dados até o requisitante. Ou seja, é o pattern para transporte de dados na resposta (output).
  
-- **Service** Representa um serviço interno desta aplicação e serve para fazer o isolamento entre camadas.
+- **Service:** Representa um serviço interno desta aplicação e serve para fazer o isolamento entre camadas.
  
-- **Controller** Pattern utilizado nesta aplicação para receber as requisições (input) e interagir com as camadas internas da aplicação a fim de gerar o resultado e enviar uma resposta ao requisitante.
+- **Controller:** Pattern utilizado nesta aplicação para receber as requisições (input) e interagir com as camadas internas da aplicação a fim de gerar o resultado e enviar uma resposta ao requisitante.
 
-- **Repository** Patters utilizado para fazer o trabalho de persistência de dados, interagindo com a camada de banco de dados.
+- **Repository:** Patters utilizado para fazer o trabalho de persistência de dados, interagindo com a camada de banco de dados.
 
 
 ---
@@ -166,9 +166,9 @@ Set-ExecutionPolicy Unrestricted -Scope Process
 
 # **Documentação da API**
 
-A documentação da API foi construída por meio do framework Swagger, muito utilizado pelo mercado para esta finalidade. Ele permite não só conhecer as especificações técnicas e funcionais da API, mas também executar testes online de forma interativa. Acesse a documentação completa por este link.
+A documentação da API foi construída por meio do framework Swagger, muito utilizado pelo mercado para esta finalidade. Ele permite não só conhecer as especificações técnicas e funcionais da API, mas também executar testes online de forma interativa. Acesse a documentação completa por este [link.](https://api-ecommerce-desafio-tecnico-production.up.railway.app/docs)
 
-[Swagger](https://api-ecommerce-desafio-tecnico-production.up.railway.app/docs)
+
 
 
 ---
