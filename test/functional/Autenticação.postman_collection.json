@@ -79,7 +79,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"clisssenwte31@gmail.com\",\r\n    \"password\": \"Secret@123\"\r\n}",
+					"raw": "{\r\n    \"email\": \"max1@gmail.com\",\r\n    \"password\": \"Secret@123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -124,7 +124,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"clssiente31@gmail.com\",\r\n    \"password\": \"Secret@123\"\r\n}",
+					"raw": "{\r\n    \"email\": \"max1@gmail.com\",\r\n    \"password\": \"Secret@123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

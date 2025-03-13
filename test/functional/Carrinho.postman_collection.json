@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"productId\": \"cm868j70z0005uok0ogrevewu\",\r\n  \"quantity\": 4\r\n}",
+					"raw": "{\r\n  \"productId\": \"cm87wcyde0008uo2k7uegkr0d\",\r\n  \"quantity\": 1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -78,7 +78,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"productId\": \"cm868j70z0005uok0ogrevewu\",\r\n  \"quantity\": 1\r\n}",
+					"raw": "{\r\n  \"productId\": \"cm87wd3hz000auo2kipqta0ny\",\r\n  \"quantity\": 10\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

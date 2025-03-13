@@ -46,14 +46,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL_BASE}}/api/products/cm87n0z1z0001o00rldz6x3x",
+					"raw": "{{URL_BASE}}/api/products/cm87weflz000guo2kxz695cay",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"products",
-						"cm87n0z1z0001o00rldz6x3x"
+						"cm87weflz000guo2kxz695cay"
 					]
 				}
 			},
@@ -71,14 +71,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{URL_BASE}}/api/products/cm81z4t6q0003uog85lncd6tn",
+					"raw": "{{URL_BASE}}/api/products/cm87weflz000guo2kxz695cay",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"products",
-						"cm81z4t6q0003uog85lncd6tn"
+						"cm87weflz000guo2kxz695cay"
 					]
 				}
 			},
@@ -97,7 +97,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Skol\",\r\n  \"description\": \"Garrafa 1L\",\r\n  \"price\": 2.99,\r\n  \"stock\": 1000,\r\n  \"categoryId\": \"cm85ssuk30001s60rae6l7s7j\"\r\n}",
+					"raw": "{\r\n  \"name\": \"Brahma1\",\r\n  \"description\": \"Garrafa 1L\",\r\n  \"price\": 2.99,\r\n  \"stock\": 1000,\r\n  \"categoryId\": \"cm87wcndn0006uo2k025jmc9w\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -130,7 +130,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Antartica1\"\r\n}",
+					"raw": "{\r\n  \"name\": \"Brahma2\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -138,14 +138,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL_BASE}}/api/products/cm868j70z0005uok0ogrevewu",
+					"raw": "{{URL_BASE}}/api/products/cm87weflz000guo2kxz695cay",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"products",
-						"cm868j70z0005uok0ogrevewu"
+						"cm87weflz000guo2kxz695cay"
 					]
 				}
 			},

@@ -46,14 +46,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL_BASE}}/api/categories/cm85ssuk30001s60rae6l7s7j",
+					"raw": "{{URL_BASE}}/api/categories/cm87wfpoj000huo2kxxyfclfz",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"categories",
-						"cm85ssuk30001s60rae6l7s7j"
+						"cm87wfpoj000huo2kxxyfclfz"
 					]
 				}
 			},
@@ -71,14 +71,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{URL_BASE}}/api/categories/cm86733qo0000uoakv9p1x6ie",
+					"raw": "{{URL_BASE}}/api/categories/cm87wfpoj000huo2kxxyfclfz",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"categories",
-						"cm86733qo0000uoakv9p1x6ie"
+						"cm87wfpoj000huo2kxxyfclfz"
 					]
 				}
 			},
@@ -97,7 +97,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"dfdffdfdfd\"  \r\n}",
+					"raw": "{\r\n  \"name\": \"Bebida2\"  \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -138,14 +138,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL_BASE}}/api/categories/cm85ssuk30001s60rae6l7s7j",
+					"raw": "{{URL_BASE}}/api/categories/cm87wfpoj000huo2kxxyfclfz",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"categories",
-						"cm85ssuk30001s60rae6l7s7j"
+						"cm87wfpoj000huo2kxxyfclfz"
 					]
 				}
 			},
