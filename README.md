@@ -178,7 +178,7 @@ A API foi construída para fornecer funcionalidades eficientes e seguras. Para f
 
 Você pode acessar a documentação completa e testar os endpoints diretamente clicando no link abaixo:
 
-[Explore os endpoints da API através do Swagger](https://apiecommerce-desafio-production.up.railway.app/docs)
+[Explore os endpoints da API através do Swagger](https://api-ecommerce-desafio-tecnico-production.up.railway.app/docs)
 
 Clique com o botão direito e selecione "Abrir em nova aba" para abrir o link em uma nova aba.
 
@@ -199,22 +199,22 @@ Para uma experiência interativa e fácil de testar os endpoints, você pode imp
 
 Clique com o botão direito e selecione "Abrir em nova aba" para abrir o link em uma nova aba.
 
-[Importe as variáveis de production do Postman Collection aqui](https://github.com/maxwelllbarboza/api_ecommerce-desafio/blob/main/test/functional/production.postman_environment.json)
+[Importe as variáveis de production do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/production.postman_environment.json)
 
 
-[Importe as variáveis de developer do Postman Collection aqui](https://github.com/maxwelllbarboza/api_ecommerce-desafio/blob/main/test/functional/developer.postman_environment.json)
+[Importe as variáveis de developer do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/developer.postman_environment.json)
 
 
-[Importe a rota Category do Postman Collection aqui](https://github.com/maxwelllbarboza/api_ecommerce-desafio/blob/main/test/functional/Category.postman_collection.json)
+[Importe a rota Category do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/Category.postman_collection.json)
 
 
-[Importe a rota Carrinho do Postman Collection aqui](https://github.com/maxwelllbarboza/api_ecommerce-desafio/blob/main/test/functional/Carrinho.postman_collection.json)
+[Importe a rota Carrinho do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/Carrinho.postman_collection.json)
 
 
-[Importe a rota Products do Postman Collection aqui](https://github.com/maxwelllbarboza/api_ecommerce-desafio/blob/main/test/functional/Products.postman_collection.json)
+[Importe a rota Products do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/Products.postman_collection.json)
 
 
-[Importe a rota Autenticação do Postman Collection aqui](https://github.com/maxwelllbarboza/api_ecommerce-desafio/blob/main/test/functional/Autentica%C3%A7%C3%A3o.postman_collection.json)
+[Importe a rota Autenticação do Postman Collection aqui](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional/Autentica%C3%A7%C3%A3o.postman_collection.json)
 
 
 ---
