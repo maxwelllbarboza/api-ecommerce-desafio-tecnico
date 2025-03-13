@@ -1,5 +1,5 @@
 import { AuthGuard } from './auth.guard';
-import { JwtTokenService } from '../../../common/services/jwt/jwt.token.service';
+import { JwtTokenService } from '../../configs/security/jwt/jwt.token.service';
 import { TestingModule, Test } from '@nestjs/testing';
 
 describe('AuthGuard', () => {

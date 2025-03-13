@@ -6,7 +6,7 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { LoggerService } from '../../infra/logger/logger.service';
+import { LoggerService } from '../utils/logger/logger.service';
 
 interface IError {
   message: string;

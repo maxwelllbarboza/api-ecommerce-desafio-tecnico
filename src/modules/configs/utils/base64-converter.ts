@@ -1,4 +1,4 @@
-import { LoginDto } from '../../modules/useCases/auth/dto/login.dto';
+import { LoginDto } from '../../useCases/auth/dto/login.dto';
 
 export const authorizationToLoginPayload = (
   authorization: string,
