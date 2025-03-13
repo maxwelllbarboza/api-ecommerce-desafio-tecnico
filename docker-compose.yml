@@ -1,0 +1,16 @@
+﻿version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpassword
+      POSTGRES_DB: ecommerce
+    ports:
+      - '5435:5432'
+    container_name: 'db-postgres-ecommerce'  
+    volumes:
+      - ./banco-de-dados-ecommerce:/var/lib/postgresql/data
+volumes:
+  banco-de-dados-ecommerce:

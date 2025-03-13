@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "2f75883d-adf0-47ac-a5b4-cd2989c78b81",
+		"name": "Category",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17820826"
+	},
+	"item": [
+		{
+			"name": "Listar categorias",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/api/categories?page=1&pageSize=10",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar uma categoria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}/api/categories/cm85ssuk30001s60rae6l7s7j",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"categories",
+						"cm85ssuk30001s60rae6l7s7j"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar categoria",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/api/categories/cm86733qo0000uoakv9p1x6ie",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"categories",
+						"cm86733qo0000uoakv9p1x6ie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar categoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"dfdffdfdfd\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/api/categories",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar categoria",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Bebida Alcoolica\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/api/categories/cm85ssuk30001s60rae6l7s7j",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"categories",
+						"cm85ssuk30001s60rae6l7s7j"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

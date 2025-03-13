@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "b8829d45-43d0-4350-83a2-b797bb4ab248",
+		"name": "Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17820826"
+	},
+	"item": [
+		{
+			"name": "Listar produtos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/api/products?page=1&pageSize=10",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar um produto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_BASE}}/api/products/cm87n0z1z0001o00rldz6x3x",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"cm87n0z1z0001o00rldz6x3x"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar produto",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/api/products/cm81z4t6q0003uog85lncd6tn",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"cm81z4t6q0003uog85lncd6tn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar produto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Skol\",\r\n  \"description\": \"Garrafa 1L\",\r\n  \"price\": 2.99,\r\n  \"stock\": 1000,\r\n  \"categoryId\": \"cm85ssuk30001s60rae6l7s7j\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/api/products",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar produto",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Antartica1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/api/products/cm868j70z0005uok0ogrevewu",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"cm868j70z0005uok0ogrevewu"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
