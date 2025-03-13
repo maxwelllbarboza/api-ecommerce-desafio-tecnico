@@ -16,8 +16,8 @@ export class JwtTokenService implements IJwtService {
     expiresIn: string,
   ): string {
     return this.jwtService.sign(payload, {
-      secret: secret,
-      expiresIn: expiresIn,
+      secret: '74YLbq4%c!wU',
+      expiresIn: '2h',
     });
   }
 }
