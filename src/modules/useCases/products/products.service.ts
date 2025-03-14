@@ -47,18 +47,4 @@ export class ProductsService {
     await this.productsRepository.getProductById(id);
     return await this.productsRepository.remove(id);
   }
-  async checkProductStock(
-    insertOrderDto: InsertOrderDto,
-    userId: string,
-  ): Promise<boolean> {
-    await this.logger.info(
-      startLog,
-      ProductsService.name,
-      this.checkProductStock.name,
-    );
-    return await this.productsRepository.checkProductStock(
-      insertOrderDto,
-      userId,
-    );
-  }
 }

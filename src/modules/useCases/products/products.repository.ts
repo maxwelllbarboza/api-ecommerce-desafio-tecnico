@@ -87,20 +87,4 @@ export class ProductsRepository {
     }
     return product;
   }
-
-  async checkProductStock(
-    insertOrderDto: InsertOrderDto,
-    userId: string,
-  ): Promise<boolean> {
-    this.logger.info(
-      startLog,
-      ProductsRepository.name,
-      this.checkProductStock.name,
-    );
-
-    const productStock = await this.databaseService.product.findUnique({
-      where: { id: insertOrderDto.productId },
-    });
-    return true;
-  }
 }
