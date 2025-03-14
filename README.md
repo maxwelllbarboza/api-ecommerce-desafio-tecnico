@@ -32,6 +32,7 @@ API E-commerce D`BRAS é uma API RESTful desenvolvida com NestJS que implementa 
 O projeto está estruturado conforme representado abaixo:
 
 ```
+collection
 src
     |_ modules
         |_ configs
@@ -54,7 +55,7 @@ src
             |_ products
             |_ users
 
-collection            
+            
 ```
 
 ## Pacote usecases
@@ -78,7 +79,7 @@ O pacote "configs" contém todo código comum ao projeto, sendo compartilhado en
 - security: Código de todos os mecanismos de segurança da aplicação;
 - message.ts: Arquivo com mensagens de retorno padrão da aplicação.
 
-## Pacote tests
+## Pacote collection
 
 - collection: Testes funcionais da aplicação, que podem ser acionados a partir do Postman.
 
