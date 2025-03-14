@@ -211,7 +211,7 @@ Na nossa aplicação, utilizamos o Jest para escrever e executar testes unitári
 
 Para uma experiência interativa e fácil de testar os endpoints, você pode importar a Postman Collection. A collection contém todos os endpoints documentados, com exemplos de requisição e resposta. Basta importar a collection para sua instância do Postman e utilizar os exemplos de JSON para testar as requisições diretamente na ferramenta.
 
-[Collection Postman](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/blob/main/test/functional)
+[Collection Postman](https://github.com/maxwelllbarboza/api-ecommerce-desafio-tecnico/tree/main/collection)
 
 
 ---
