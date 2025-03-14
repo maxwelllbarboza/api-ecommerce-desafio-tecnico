@@ -99,6 +99,33 @@ Detalhes mais adiante sobre testes.
 ---
 
 
+## Camadas da Aplicação
+
+Os casos de uso são organizados em camadas que, em conjunto com os Design Patters detalhados mais adiante, apoiam na utilização de boas práticas de desenvolvimento, tal como os princípios do SOLID. Esta aplicação está utilizando as seguintes camadas:
+
+-  **Domain:** Camada de negócios e persistência, responsável pela representação do domínio de negócio e persistência dos dados, nela se encontram os patterns DTO, Entity e Repository;
+
+-  **Service:** Camada de serviços da aplicação, responsável pela comunicação entre a camada “Controller” e a camada “Domain”. Nela encontra-se o pattern Service.
+
+-  **Controller:** Camada de controle da aplicação, responsável pelo recebimento das requisições e interação com as demais camadas da aplicação para produzir a resposta final.
+
+A divisão em camadas e os patterns utilizados auxiliam na utilização dos princípios do SOLID:
+
+-  **Single Responsability:** Cada classe implementada realizando apenas uma missão, ou seja, com uma única responsabilidade;
+
+-  **Open-Closed Principle:** Objetos ou entidades devem ser abertos para extensão, porém fechados para modificação. Extendendo e não alterando o código para novos comportamentos.
+
+-  **Liskov Substitution Principle:** Cada classe derivada deve ser substituível por sua classe base, evitando criar dependências com especializações.
+
+-  **Interface Segregation Principle:** Cada classe não pode ser obrigada a implementar interfaces e/ou métodos que não irá utilizar, sendo melhor criar interfaces para fins específicos.
+
+-  **Dependency Inversion Principle:** É melhor depender de abstrações e não de implementações específicas, pois isso gera desacoplamento de código.
+
+
+---
+
+
+
 # **Filters e Interceptors**
 
 A aplicação utiliza alguns patterns para realizar tratamentos padronizados e facilitar a manutenção do código, conforme abaixo:
