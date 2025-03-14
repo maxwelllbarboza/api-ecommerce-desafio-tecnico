@@ -6,9 +6,10 @@ import { AuthGuard } from '../auth/auth.guard';
 import { CategoriesRepository } from './categories.repository';
 import { LoggerService } from '../../configs/logger/logger.service';
 import { DatabaseModule } from '../../configs/database/database.module';
+import { LoggerModule } from 'src/modules/configs/logger/logger.module';
 
 @Module({
-  imports: [JwtTokenModule, DatabaseModule],
+  imports: [JwtTokenModule, DatabaseModule, LoggerModule],
   providers: [
     CategoriesService,
     AuthGuard,

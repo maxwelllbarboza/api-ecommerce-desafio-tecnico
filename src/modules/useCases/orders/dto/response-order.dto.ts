@@ -1,5 +1,5 @@
 import { OrderEntity } from '../entities/orders.entity';
-import { ResponseOrdersItemDto } from '../../orders-item/dto/response-orders-item.dto';
+import { ResponseOrdersItemDto } from './response-orders-item.dto';
 
 export class ResponseOrderDto {
   id: string;

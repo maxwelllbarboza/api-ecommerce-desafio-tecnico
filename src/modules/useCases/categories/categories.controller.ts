@@ -22,14 +22,20 @@ import { AuthGuard } from '../auth/auth.guard';
 import { RolesGuard } from '../auth/roles/roles.guard';
 import { Roles } from '../auth/roles/roles.decorator';
 import { Role } from '@prisma/client';
+import { LoggerService } from 'src/modules/configs/logger/logger.service';
+import { startLog } from 'src/modules/configs/logger/log-template';
 @Roles(Role.ADMIN)
 @Controller('categories')
 export class CategoriesController {
-  constructor(private readonly categoriesService: CategoriesService) {}
+  constructor(
+    private readonly categoriesService: CategoriesService,
+    private readonly logger: LoggerService,
+  ) {}
 
   @Get()
   @HttpCode(200)
   findAll(@Query('page') page?: string, @Query('pageSize') pageSize?: string) {
+    this.logger.info(startLog, CategoriesController.name, this.findAll.name);
     const pageNumber = page ? parseInt(page, 10) : 1;
     const size = pageSize ? parseInt(pageSize, 10) : 10;
     return this.categoriesService.findAll(pageNumber, size);
@@ -38,6 +44,7 @@ export class CategoriesController {
   @Get(':id')
   @HttpCode(200)
   findOne(@Param('id') id: string) {
+    this.logger.info(startLog, CategoriesController.name, this.findOne.name);
     return this.categoriesService.findOne(id);
   }
 
@@ -46,6 +53,7 @@ export class CategoriesController {
   @HttpCode(HttpStatus.CREATED)
   @UsePipes(new ValidationPipe({ whitelist: true, transform: true }))
   async create(@Body() createCategoryDto: CreateCategoryDto) {
+    this.logger.info(startLog, CategoriesController.name, this.create.name);
     return this.categoriesService.create(createCategoryDto);
   }
 
@@ -56,6 +64,7 @@ export class CategoriesController {
     @Param('id') id: string,
     @Body() updateCategoryDto: UpdateCategoryDto,
   ) {
+    this.logger.info(startLog, CategoriesController.name, this.update.name);
     return this.categoriesService.update(id, updateCategoryDto);
   }
 
@@ -63,20 +72,7 @@ export class CategoriesController {
   @HttpCode(HttpStatus.NO_CONTENT)
   @Delete(':id')
   async remove(@Param('id') id: string) {
-    try {
-      return await this.categoriesService.remove(id);
-    } catch (error) {
-      if (error.code === 'P2003') {
-        throw new BadRequestException(
-          'Não é possível excluir a categoria porque existem produtos vinculados a ela.',
-        );
-      }
-
-      if (error.code === 'P2025') {
-        throw new NotFoundException('Categoria não encontrada.');
-      }
-
-      throw error;
-    }
+    this.logger.info(startLog, CategoriesController.name, this.remove.name);
+    return await this.categoriesService.remove(id);
   }
 }

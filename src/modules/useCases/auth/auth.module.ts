@@ -6,9 +6,10 @@ import { JwtTokenModule } from '../../configs/security/jwt/jwt.token.module';
 import { BcryptModule } from '../../configs/security/bcrypt/bcrypt.module';
 import { LoggerService } from '../../configs/logger/logger.service';
 import { DatabaseModule } from '../../configs/database/database.module';
+import { LoggerModule } from 'src/modules/configs/logger/logger.module';
 
 @Module({
-  imports: [JwtTokenModule, BcryptModule, DatabaseModule],
+  imports: [JwtTokenModule, BcryptModule, DatabaseModule, LoggerModule],
   providers: [AuthService, BcryptService, LoggerService],
   controllers: [AuthController],
 })

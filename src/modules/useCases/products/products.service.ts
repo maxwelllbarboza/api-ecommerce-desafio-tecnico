@@ -5,6 +5,7 @@ import { invalidUpdate } from '../../configs/message';
 import { ProductsRepository } from './products.repository';
 import { LoggerService } from '../../configs/logger/logger.service';
 import { startLog } from '../../configs/logger/log-template';
+import { InsertOrderDto } from '../orders/dto/insert-order.dto';
 
 @Injectable()
 export class ProductsService {
@@ -45,5 +46,19 @@ export class ProductsService {
     this.logger.info(startLog, ProductsService.name, this.remove.name);
     await this.productsRepository.getProductById(id);
     return await this.productsRepository.remove(id);
+  }
+  async checkProductStock(
+    insertOrderDto: InsertOrderDto,
+    userId: string,
+  ): Promise<boolean> {
+    await this.logger.info(
+      startLog,
+      ProductsService.name,
+      this.checkProductStock.name,
+    );
+    return await this.productsRepository.checkProductStock(
+      insertOrderDto,
+      userId,
+    );
   }
 }

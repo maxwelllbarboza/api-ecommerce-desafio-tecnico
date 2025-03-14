@@ -1,80 +1,77 @@
 import {
   Controller,
-  Get,
   Post,
+  Get,
   Delete,
-  Body,
-  Param,
-  UseGuards,
-  UsePipes,
-  ValidationPipe,
   Patch,
-  HttpStatus,
+  Body,
+  UseGuards,
   HttpCode,
+  HttpStatus,
 } from '@nestjs/common';
 import { OrdersService } from './orders.service';
+import { UserId } from 'src/modules/configs/security/user-id.decorator';
 import { InsertOrderDto } from './dto/insert-order.dto';
-import { Roles } from '../auth/roles/roles.decorator';
-import { Role } from '@prisma/client';
+import { UpdateOrderDto } from './dto/update-order.dto';
+import { ResponseOrderDto } from './dto/response-order.dto';
 import { AuthGuard } from '../auth/auth.guard';
 import { RolesGuard } from '../auth/roles/roles.guard';
-import { LoggerService } from '../../configs/logger/logger.service';
-import { startLog } from '../../configs/logger/log-template';
-import { UserId } from '../../configs/security/user-id.decorator';
-import { ResponseOrderDto } from './dto/response-order.dto';
-import { UpdateOrderDto } from './dto/update-order.dto';
-import { ResponseUpdateOrderDto } from './dto/response-update-order.dto';
+import { Role } from '@prisma/client';
+import { Roles } from '../auth/roles/roles.decorator';
 
-@Roles(Role.USER, Role.ADMIN)
-@UseGuards(AuthGuard, RolesGuard)
+@Roles(Role.ADMIN)
 @Controller('order')
 export class OrdersController {
-  constructor(
-    private readonly ordersService: OrdersService,
-    private readonly logger: LoggerService,
-  ) {}
-  @UsePipes(ValidationPipe)
+  constructor(private ordersService: OrdersService) {}
+
   @Post()
-  @HttpCode(HttpStatus.CREATED)
-  async insertOrder(
+  @HttpCode(HttpStatus.OK)
+  async addToCart(
     @UserId() userId: string,
     @Body() insertOrderDto: InsertOrderDto,
-  ): Promise<ResponseOrderDto> {
-    this.logger.info(startLog, OrdersController.name, this.insertOrder.name);
-
-    return new ResponseOrderDto(
-      await this.ordersService.insertOrder(userId, insertOrderDto),
-    );
+  ) {
+    return this.ordersService.addToCart(userId, insertOrderDto);
   }
+
   @Get()
   @HttpCode(HttpStatus.OK)
-  async findOrderByUserId(@UserId() userId: string): Promise<ResponseOrderDto> {
-    return new ResponseOrderDto(
-      await this.ordersService.findOrderByUserId(userId),
-    );
+  async getCart(@UserId() userId: string) {
+    return this.ordersService.getCart(userId);
   }
+
+  @UseGuards(AuthGuard, RolesGuard)
+  @Get('admin/all')
+  @HttpCode(HttpStatus.OK)
+  async getAllCarts() {
+    return this.ordersService.getAllCarts();
+  }
+
   @Delete()
   @HttpCode(HttpStatus.OK)
-  async clearOrder(@UserId() userId: string) {
-    await this.ordersService.clear(userId);
+  async clearCart(@UserId() userId: string) {
+    return this.ordersService.clearCart(userId);
   }
-  @Delete('/product/:productId')
-  @HttpCode(HttpStatus.OK)
-  async deleteProductOrder(
-    @Param('productId') productId: string,
-    @UserId() userId: string,
-  ) {
-    return await this.ordersService.deleteProductOrder(productId, userId);
-  }
-  @UsePipes(ValidationPipe)
+
   @Patch()
   @HttpCode(HttpStatus.OK)
-  async updateProductInOrder(
-    @Body() updateOrderDto: UpdateOrderDto,
+  async updateQuantity(
     @UserId() userId: string,
-  ): Promise<ResponseOrderDto> {
-    return new ResponseUpdateOrderDto(
-      await this.ordersService.updateProductOrder(updateOrderDto, userId),
+    @Body() @Body() updateOrderDto: UpdateOrderDto,
+  ) {
+    return this.ordersService.updateQuantity(userId, updateOrderDto);
+  }
+
+  @Delete()
+  @HttpCode(HttpStatus.OK)
+  async removeItem(@UserId() userId: string, insertOrderDto: InsertOrderDto) {
+    return this.ordersService.removeItem(userId, insertOrderDto);
+  }
+
+  @Post('finalizar')
+  @HttpCode(HttpStatus.OK)
+  async completePurchase(@UserId() userId: string): Promise<ResponseOrderDto> {
+    return new ResponseOrderDto(
+      await this.ordersService.completePurchase(userId),
     );
   }
 }
