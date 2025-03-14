@@ -99,7 +99,7 @@ Detalhes mais adiante sobre testes.
 ---
 
 
-## Camadas da Aplicação
+# **Camadas da Aplicação**
 
 Os casos de uso são organizados em camadas que, em conjunto com os Design Patters detalhados mais adiante, apoiam na utilização de boas práticas de desenvolvimento, tal como os princípios do SOLID. Esta aplicação está utilizando as seguintes camadas:
 
