@@ -9,6 +9,7 @@ import { DatabaseModule } from '../../configs/database/database.module';
 import { LoggerModule } from 'src/modules/configs/logger/logger.module';
 import { ProductsService } from '../products/products.service';
 import { ProductsRepository } from '../products/products.repository';
+import { OrdersRepository } from './orders.repository';
 
 @Module({
   controllers: [OrdersController],
@@ -18,7 +19,9 @@ import { ProductsRepository } from '../products/products.repository';
     LoggerService,
     ProductsService,
     ProductsRepository,
+    OrdersRepository,
   ],
   imports: [JwtTokenModule, UsersModule, DatabaseModule, LoggerModule],
+  exports: [OrdersRepository],
 })
 export class OrdersModule {}

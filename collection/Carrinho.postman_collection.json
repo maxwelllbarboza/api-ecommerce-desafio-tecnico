@@ -7,9 +7,9 @@
 	},
 	"item": [
 		{
-			"name": "Inserir produto no carrinho",
+			"name": "Buscar carrinho",
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
@@ -17,15 +17,6 @@
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"productId\": \"cm87wcyde0008uo2k7uegkr0d\",\r\n  \"quantity\": 1\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
 					"raw": "{{URL_BASE}}/api/order",
 					"host": [
@@ -40,9 +31,9 @@
 			"response": []
 		},
 		{
-			"name": "Remover produto do carrinho",
+			"name": "Buscar todos os carrinho(ADMIN))",
 			"request": {
-				"method": "DELETE",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
@@ -51,24 +42,23 @@
 					}
 				],
 				"url": {
-					"raw": "{{URL_BASE}}/api/order/product/cm868j70z0005uok0ogrevewu",
+					"raw": "{{URL_BASE}}/api/order/admin",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"order",
-						"product",
-						"cm868j70z0005uok0ogrevewu"
+						"admin"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Atualizar quantidade de produto no carrinho",
+			"name": "Inserir produto no carrinho",
 			"request": {
-				"method": "PATCH",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
@@ -85,30 +75,6 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "{{URL_BASE}}/api/order",
-					"host": [
-						"{{URL_BASE}}"
-					],
-					"path": [
-						"api",
-						"order"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Buscar carrinho",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{access_token}}",
-						"type": "text"
-					}
-				],
 				"url": {
 					"raw": "{{URL_BASE}}/api/order",
 					"host": [
@@ -141,6 +107,90 @@
 					"path": [
 						"api",
 						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover produto do carrinho",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/api/order/product/cm87wd9of000cuo2kriexakhk",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"order",
+						"product",
+						"cm87wd9of000cuo2kriexakhk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar quantidade de produto no carrinho",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": \"cm87wd3hz000auo2kipqta0ny\",\r\n  \"quantity\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/api/order",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Finalizar compra",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/api/order/finalizar",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"order",
+						"finalizar"
 					]
 				}
 			},

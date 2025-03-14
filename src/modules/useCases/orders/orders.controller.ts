@@ -14,7 +14,6 @@ import { OrdersService } from './orders.service';
 import { UserId } from 'src/modules/configs/security/user-id.decorator';
 import { InsertOrderDto } from './dto/insert-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
-import { ResponseOrderDto } from './dto/response-order.dto';
 import { AuthGuard } from '../auth/auth.guard';
 import { RolesGuard } from '../auth/roles/roles.guard';
 import { Role } from '@prisma/client';
@@ -80,10 +79,8 @@ export class OrdersController {
   }
 
   @Get('finalizar')
-  @HttpCode(HttpStatus.OK)
-  async completePurchase(@UserId() userId: string): Promise<ResponseOrderDto> {
-    return new ResponseOrderDto(
-      await this.ordersService.completePurchase(userId),
-    );
+  @HttpCode(HttpStatus.NO_CONTENT)
+  async completePurchase(@UserId() userId: string): Promise<void> {
+    return await this.ordersService.completePurchase(userId);
   }
 }

@@ -9,9 +9,10 @@ import { DatabaseModule } from '../../configs/database/database.module';
 import { LoggerModule } from 'src/modules/configs/logger/logger.module';
 
 import { OrdersService } from '../orders/orders.service';
+import { OrdersModule } from '../orders/orders.module';
 
 @Module({
-  imports: [JwtTokenModule, DatabaseModule, LoggerModule],
+  imports: [JwtTokenModule, DatabaseModule, LoggerModule, OrdersModule],
   providers: [
     ProductsService,
     AuthGuard,
@@ -20,6 +21,6 @@ import { OrdersService } from '../orders/orders.service';
     OrdersService,
   ],
   controllers: [ProductsController],
-  exports: [ProductsService],
+  exports: [ProductsService, OrdersService],
 })
 export class ProductsModule {}
