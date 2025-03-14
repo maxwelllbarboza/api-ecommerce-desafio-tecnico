@@ -8,9 +8,5 @@ export interface IJwtServicePayload {
 
 export interface IJwtService {
   checkToken(token: string): Promise<any>;
-  createToken(
-    payload: IJwtServicePayload,
-    secret: string,
-    expiresIn: string,
-  ): string;
+  createToken(payload: IJwtServicePayload, isRefreshToken?: boolean): string;
 }

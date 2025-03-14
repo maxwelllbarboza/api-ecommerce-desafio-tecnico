@@ -1,4 +1,5 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { DatabaseService } from '../../configs/database/database.service';
 import { LoginDto } from './dto/login.dto';
 import { JwtTokenService } from '../../configs/security/jwt/jwt.token.service';
@@ -8,15 +9,17 @@ import { UnauthorizedError } from '../../configs/interceptors/types/Unauthorized
 @Injectable()
 export class AuthService {
   constructor(
-    private databaseService: DatabaseService,
+    private readonly databaseService: DatabaseService,
     private readonly jwtTokenService: JwtTokenService,
     private readonly bcryptService: BcryptService,
+    private readonly configService: ConfigService,
   ) {}
-  async login(loginDto: LoginDto) {
+
+  async login(
+    loginDto: LoginDto,
+  ): Promise<{ access_token: string; refresh_token: string }> {
     const user = await this.databaseService.user.findUnique({
-      where: {
-        email: loginDto.email,
-      },
+      where: { email: loginDto.email },
     });
 
     if (
@@ -25,23 +28,11 @@ export class AuthService {
     ) {
       throw new UnauthorizedError('E-mail e senha inválidos');
     }
-    const payload = {
-      id: user.id,
-      role: user.role,
-      email: user.email,
-    };
 
-    const access_token = this.jwtTokenService.createToken(
-      payload,
-      process.env.JWT_SECRET,
-      process.env.JWT_EXPIRATION_TIME,
-    );
+    const payload = { id: user.id, role: user.role, email: user.email };
 
-    const refresh_token = this.jwtTokenService.createToken(
-      payload,
-      process.env.JWT_REFRESH_TOKEN_SECRET,
-      process.env.JWT_REFRESH_TOKEN_EXPIRATION_TIME,
-    );
+    const access_token = this.jwtTokenService.createToken(payload);
+    const refresh_token = this.jwtTokenService.createToken(payload, true);
 
     await this.databaseService.user.update({
       where: { id: user.id },
@@ -51,27 +42,35 @@ export class AuthService {
     return { access_token, refresh_token };
   }
 
-  async refreshToken(refreshToken: string) {
+  async refreshToken(refreshToken: string): Promise<{ access_token: string }> {
+    const payload = await this.jwtTokenService.checkToken(refreshToken);
+
+    const user = await this.databaseService.user.findFirst({
+      where: { id: payload.id },
+    });
+
+    if (!user) {
+      throw new ForbiddenException('Refresh token inválido');
+    }
+
+    const newAccessToken = this.jwtTokenService.createToken({
+      id: user.id,
+      role: user.role,
+      email: user.email,
+    });
+
+    return { access_token: newAccessToken };
+  }
+
+  async logout(userId: string) {
     try {
-      const payload = await this.jwtTokenService.checkToken(refreshToken);
-
-      const user = await this.databaseService.user.findFirst({
-        where: { id: payload.id },
+      await this.databaseService.user.update({
+        where: { id: userId },
+        data: { hashRefreshToken: null },
       });
-
-      if (!user) {
-        throw new ForbiddenException('Refresh token inválido');
-      }
-
-      const newAccessToken = this.jwtTokenService.createToken(
-        { id: user.id, role: user.role, email: user.email },
-        process.env.JWT_SECRET,
-        process.env.JWT_EXPIRATION_TIME,
-      );
-
-      return { access_token: newAccessToken };
+      return { message: 'Logout realizado com sucesso' };
     } catch (error) {
-      throw new ForbiddenException('Refresh token inválido ou expirado');
+      throw new ForbiddenException('Erro ao tentar realizar o logout');
     }
   }
 }
