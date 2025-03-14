@@ -24,5 +24,3 @@ npm run seed
 
 # Rodar o servidor NestJS
 npm run start:dev
-
-
