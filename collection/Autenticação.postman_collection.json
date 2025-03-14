@@ -55,6 +55,45 @@
 			"response": []
 		},
 		{
+			"name": "Logout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = pm.response.json();\r",
+							"pm.environment.set(\"access_token\", response.data.access_token);\r",
+							"pm.environment.set(\"refresh_token\", response.data.refresh_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/api/auth/logout",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Criar Usuario Cliente",
 			"event": [
 				{
@@ -79,7 +118,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"max1@gmail.com\",\r\n    \"password\": \"Secret@123\"\r\n}",
+					"raw": "{\r\n    \"email\": \"client2@gmail.com\",\r\n    \"password\": \"Secret@123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

@@ -46,14 +46,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL_BASE}}/api/products/cm87weflz000guo2kxz695cay",
+					"raw": "{{URL_BASE}}/api/products/cm87wd9of000cuo2kriexakhk",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"products",
-						"cm87weflz000guo2kxz695cay"
+						"cm87wd9of000cuo2kriexakhk"
 					]
 				}
 			},
@@ -71,14 +71,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{URL_BASE}}/api/products/cm87weflz000guo2kxz695cay",
+					"raw": "{{URL_BASE}}/api/products/cm87wd3hz000auo2kipqta0ny",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"products",
-						"cm87weflz000guo2kxz695cay"
+						"cm87wd3hz000auo2kipqta0ny"
 					]
 				}
 			},
@@ -97,7 +97,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Brahma1\",\r\n  \"description\": \"Garrafa 1L\",\r\n  \"price\": 2.99,\r\n  \"stock\": 1000,\r\n  \"categoryId\": \"cm87wcndn0006uo2k025jmc9w\"\r\n}",
+					"raw": "{\r\n  \"name\": \"Brahma2\",\r\n  \"description\": \"Garrafa 1L\",\r\n  \"price\": 2.99,\r\n  \"stock\": 1000,\r\n  \"categoryId\": \"cm87wcndn0006uo2k025jmc9w\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -130,7 +130,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Brahma2\"\r\n}",
+					"raw": "{\r\n  \"stock\": 1000\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -138,14 +138,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL_BASE}}/api/products/cm87weflz000guo2kxz695cay",
+					"raw": "{{URL_BASE}}/api/products/cm87wd3hz000auo2kipqta0ny",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"products",
-						"cm87weflz000guo2kxz695cay"
+						"cm87wd3hz000auo2kipqta0ny"
 					]
 				}
 			},

@@ -46,14 +46,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL_BASE}}/api/categories/cm87wfpoj000huo2kxxyfclfz",
+					"raw": "{{URL_BASE}}/api/categories/cm87wcndn0006uo2k025jmc9w",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"categories",
-						"cm87wfpoj000huo2kxxyfclfz"
+						"cm87wcndn0006uo2k025jmc9w"
 					]
 				}
 			},
@@ -71,14 +71,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{URL_BASE}}/api/categories/cm87wfpoj000huo2kxxyfclfz",
+					"raw": "{{URL_BASE}}/api/categories/cm892ttiy0000uock8inevlmo",
 					"host": [
 						"{{URL_BASE}}"
 					],
 					"path": [
 						"api",
 						"categories",
-						"cm87wfpoj000huo2kxxyfclfz"
+						"cm892ttiy0000uock8inevlmo"
 					]
 				}
 			},
@@ -97,7 +97,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Bebida2\"  \r\n}",
+					"raw": "{\r\n  \"name\": \"rrrrerere\"  \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
