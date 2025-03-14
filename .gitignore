@@ -1,7 +1,6 @@
 # compiled output
 /dist
 /node_modules
-READMET.md
 .env
 .history
 /banco-de-dados-ecommerce
