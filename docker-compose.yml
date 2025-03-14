@@ -14,3 +14,4 @@ services:
       - ./banco-de-dados-ecommerce:/var/lib/postgresql/data
 volumes:
   banco-de-dados-ecommerce:
+
