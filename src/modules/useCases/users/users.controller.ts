@@ -14,6 +14,7 @@ import { AuthGuard } from '../auth/auth.guard';
 import { RolesGuard } from '../auth/roles/roles.guard';
 import { LoggerService } from '../../configs/logger/logger.service';
 import { ResponseUserDto } from './dto/response-user.dto';
+import { startLog } from 'src/modules/configs/logger/log-template';
 
 @Controller('users')
 export class UsersController {
@@ -27,6 +28,7 @@ export class UsersController {
   async createUser(
     @Body() createUserDto: CreateUserDto,
   ): Promise<ResponseUserDto> {
+    this.logger.info(startLog, UsersController.name, this.createUser.name);
     return new ResponseUserDto(
       await this.usersService.createUser(createUserDto, Role.USER),
     );
@@ -38,6 +40,7 @@ export class UsersController {
   async createUserAdmin(
     @Body() createUserDto: CreateUserDto,
   ): Promise<ResponseUserDto> {
+    this.logger.info(startLog, UsersController.name, this.createUserAdmin.name);
     return new ResponseUserDto(
       await this.usersService.createUser(createUserDto, Role.ADMIN),
     );

@@ -5,6 +5,7 @@ import * as bcrypt from 'bcrypt';
 import { $Enums } from '@prisma/client';
 import { UserEntity } from './entities/user.entity';
 import { LoggerService } from '../../configs/logger/logger.service';
+import { startLog } from 'src/modules/configs/logger/log-template';
 
 @Injectable()
 export class UserRepository {
@@ -17,6 +18,7 @@ export class UserRepository {
     createUserDto: CreateUserDto,
     role: $Enums.Role,
   ): Promise<UserEntity> {
+    this.logger.info(startLog, UserRepository.name, this.create.name);
     const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
     return this.databaseService.user.create({
       data: {
@@ -28,6 +30,7 @@ export class UserRepository {
   }
 
   async findByEmail(email: string): Promise<UserEntity> {
+    this.logger.info(startLog, UserRepository.name, this.findByEmail.name);
     return this.databaseService.user.findUnique({
       where: { email },
     });

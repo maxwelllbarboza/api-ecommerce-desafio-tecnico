@@ -5,6 +5,7 @@ export const errorLog = 'Erro encontrado: ';
 export const emailNotFound = 'Email not found';
 export const invalidPassword = 'Password invalid';
 export const invalidToken = 'invalid token.';
+export const userNotFound = 'Email not found';
 
 export const validationError = 'validation error.';
 
