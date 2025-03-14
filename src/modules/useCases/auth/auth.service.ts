@@ -29,7 +29,7 @@ export class AuthService {
 
     const payload = { id: user.id, role: user.role, email: user.email };
 
-    const access_token = this.jwtTokenService.createToken(payload);
+    const access_token = this.jwtTokenService.createToken(payload, false);
     const refresh_token = this.jwtTokenService.createToken(payload, true);
 
     await this.databaseService.user.update({

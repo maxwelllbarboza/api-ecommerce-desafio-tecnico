@@ -1,30 +1,38 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { IJwtService, IJwtServicePayload } from './jwt.token.interface';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
-export class JwtTokenService implements IJwtService {
-  private readonly JWT_SECRET = '74YLbq4%c!wU';
-  private readonly JWT_EXPIRATION_TIME = '4h';
-  private readonly JWT_REFRESH_TOKEN_SECRET = '7jML9q4-c!s0';
-  private readonly JWT_REFRESH_TOKEN_EXPIRATION_TIME = '8h';
+export class JwtTokenService {
+  constructor(
+    private readonly jwtService: JwtService,
+    private readonly configService: ConfigService,
+  ) {}
 
-  constructor(private readonly jwtService: JwtService) {}
+  createToken(payload: any, isRefreshToken: boolean = false): string {
+    const secret = isRefreshToken
+      ? this.configService.get<string>('JWT_REFRESH_TOKEN_SECRET')
+      : this.configService.get<string>('JWT_SECRET');
 
-  async checkToken(token: string): Promise<IJwtServicePayload> {
-    return this.jwtService.verifyAsync<IJwtServicePayload>(token, {
-      secret: this.JWT_SECRET,
+    const expiresIn = isRefreshToken
+      ? this.configService.get<string>('JWT_REFRESH_TOKEN_EXPIRATION_TIME')
+      : this.configService.get<string>('JWT_EXPIRATION_TIME');
+
+    console.log('expiresIn:', expiresIn);
+
+    return this.jwtService.sign(payload, {
+      secret: secret,
+      expiresIn: expiresIn,
     });
   }
 
-  createToken(payload: IJwtServicePayload, isRefreshToken = false): string {
-    const secret = isRefreshToken
-      ? this.JWT_REFRESH_TOKEN_SECRET
-      : this.JWT_SECRET;
-    const expiresIn = isRefreshToken
-      ? this.JWT_REFRESH_TOKEN_EXPIRATION_TIME
-      : this.JWT_EXPIRATION_TIME;
-
-    return this.jwtService.sign(payload, { secret, expiresIn });
+  checkToken(token: string): any {
+    try {
+      return this.jwtService.verify(token, {
+        secret: this.configService.get<string>('JWT_SECRET'),
+      });
+    } catch (error) {
+      throw new Error('Token inválido ou expirado');
+    }
   }
 }
