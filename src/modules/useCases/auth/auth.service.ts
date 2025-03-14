@@ -1,5 +1,4 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 import { DatabaseService } from '../../configs/database/database.service';
 import { LoginDto } from './dto/login.dto';
 import { JwtTokenService } from '../../configs/security/jwt/jwt.token.service';
@@ -12,7 +11,6 @@ export class AuthService {
     private readonly databaseService: DatabaseService,
     private readonly jwtTokenService: JwtTokenService,
     private readonly bcryptService: BcryptService,
-    private readonly configService: ConfigService,
   ) {}
 
   async login(
@@ -62,7 +60,7 @@ export class AuthService {
     return { access_token: newAccessToken };
   }
 
-  async logout(userId: string) {
+  async logout(userId: string): Promise<{ message: string }> {
     try {
       await this.databaseService.user.update({
         where: { id: userId },
